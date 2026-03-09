@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneha P | BCA Student & AI Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --glass: rgba(255, 255, 255, 0.9);
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Navigation */
+        nav { padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: var(--glass); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid #e2e8f0; }
+        .nav-links a { text-decoration: none; color: var(--text-main); margin-left: 2rem; font-weight: 500; font-size: 0.9rem; transition: var(--transition); }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-hire { background: var(--primary); color: white !important; padding: 0.6rem 1.2rem; border-radius: 8px; }
+
+        /* Hero Section */
+        .hero { padding: 8rem 0 5rem; display: flex; align-items: center; gap: 4rem; }
+        .hero-content { flex: 1; }
+        .badge-main { color: var(--primary); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; display: block; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 1.5rem; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; }
+        
+        /* Animated Hero Visual */
+        .hero-visual { 
+            width: 350px; 
+            height: 350px; 
+            background: linear-gradient(135deg, #2563eb, #7cc0ff); 
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3); 
+            animation: floatGlow 6s ease-in-out infinite;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: screen; 
+            filter: brightness(1.1) contrast(1.1);
+        }
+
+        /* The "Breathing" Animation */
+        @keyframes floatGlow {
+            0%, 100% { 
+                transform: translateY(0) scale(1);
+                box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+            50% { 
+                transform: translateY(-15px) scale(1.02);
+                box-shadow: 0 35px 60px rgba(37, 99, 235, 0.5);
+                border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+            }
+        }
+
+        /* Sections */
+        section { padding: 5rem 0; }
+        h2 { font-size: 2.2rem; margin-bottom: 3rem; }
+
+        /* Experience & Project Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .card { background: white; padding: 2rem; border-radius: 16px; border: 1px solid #f1f5f9; box-shadow: var(--card-shadow); transition: var(--transition); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+        .card h3 { margin: 1rem 0 0.5rem; font-size: 1.3rem; }
+        .card .company { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem; display: block; }
+        
+        /* Skill Badges */
+        .skill-group { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+        .skill-tag { background: #eff6ff; color: var(--primary); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; border: 1px solid #dbeafe; }
+
+        footer { background: #0f172a; color: white; padding: 5rem 0; text-align: center; }
+        .footer-email { font-size: 1.8rem; color: white; text-decoration: none; border-bottom: 2px solid var(--primary); }
+        .footer-link { color: #94a3b8; text-decoration: none; margin: 0 1.5rem; transition: var(--transition); font-size: 0.9rem; }
+        .footer-link:hover { color: white; }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding: 4rem 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-visual { width: 280px; height: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <div class="logo"><strong>Sneha P.</strong></div>
+        <div class="nav-links">
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="mailto:snehaprasad17536@gmail.com" class="btn-hire">Let's Talk</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge-main">BCA Student @ Bengaluru City University</span>
+                <h1>Aspiring <span>AI Developer</span> & Future Focused.</h1>
+                <p>Bridging the gap between efficient administration and advanced Generative AI. Currently specialized in building LLM-driven applications with LangChain.</p>
+                <div class="skill-group">
+                    <span class="skill-tag">GenAI</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">LangChain</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="C:\Users\Vamsh\OneDrive\Desktop\sneha\portfolio image.jpeg" alt="AI Tech Hologram">
+            </div>
+        </section>
+
+        <section id="experience">
+            <span class="badge-main">Professional Journey</span>
+            <h2>Experience & Education</h2>
+            <div class="grid">
+                <div class="card">
+                    <span style="font-size: 1.5rem;">🎓</span>
+                    <h3>BCA Student</h3>
+                    <span class="company">Bengaluru City University (BCU)</span>
+                    <p>Focusing on computer applications, software development, and emerging AI technologies.</p>
+                </div>
+                <div class="card">
+                    <span style="font-size: 1.5rem;">🏥</span>
+                    <h3>Receptionist</h3>
+                    <span class="company">Sri Tulasi Ayurvedalaya</span>
+                    <p>Managed patient workflows and clinic administration, perfecting communication and multitasking skills.</p>
+                </div>
+                <div class="card">
+                    <span style="font-size: 1.5rem;">🏅</span>
+                    <h3>Google Cloud Verified</h3>
+                    <span class="company">Skills Badge & Certificate</span>
+                    <p>Verified expertise in Generative AI, Python, and LangChain for context-aware responses.</p>
+                </div>  
+            </div>
+
+            </section>
+                    <section id="certificates" style="margin-top: 5rem;">
+                    <span class="badge-main">Certificate & skill badge</span>
+                    <h2>Google skills & Certificates</h2>       
+                    <div class="grid" style="max-width: 800px;">
+                        <a href="https://www.skills.google/public_profiles/4b86ee06-83cb-487c-9b86-eee30cac2b35" target="_blank" class="btn-link">Google Skills Profile</a>
+                        <a href="AI for Beginners.pdf" target="_blank" class="btn-link">AI for Beginners PDF</a>
+                        <a href="Data Science & Analytics.pdf" target="_blank" class="btn-link">Data Science & Analytics PDF</a>
+            </div>
+        </section>
+
+        <section id="skills">
+            <span class="badge-main">Verified Expertise</span>
+            <h2>Google Cloud & AI Skills</h2>
+            <div class="skill-group" style="max-width: 800px;">
+                <div class="skill-tag">✓ Introduction to Generative AI</div>
+                <div class="skill-tag">✓ Large Language Models (LLMs)</div>
+                <div class="skill-tag">✓ Develop Gemini Apps</div>
+                <div class="skill-tag">✓ Data & Analytics for Beginners</div>
+                <div class="skill-tag">✓ AI for Beginners</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <span class="badge-main">Selected Work</span>
+            <h2>Featured Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="badge-main" style="font-size: 0.65rem;">Active Project</span>
+                    <h3>FlaskGPT</h3>
+                    <p>A web-based interface for interacting with GPT models, built using Flask for the backend.</p>
+                </div>
+                <div class="card">
+                    <span class="badge-main" style="font-size: 0.65rem;">RAG Framework</span>
+                    <h3>LangChain Integration</h3>
+                    <p>Building specialized agents that use LangChain for document retrieval and RAG tasks.</p>
+                </div>
+                <div class="card">
+                    <span class="badge-main" style="font-size: 0.65rem;">Entrepreneurship</span>
+                    <h3>FKCCINNO MANTHAN</h3>
+                    <p>A specialized initiative built to power the next generation of tech entrepreneurs.</p>
+                </div> 
+                <div class="card">
+                <span class="badge-main" style="font-size: 0.65rem;">Data Visualization</span>
+                <h3>AI Business Dashboard</h3>
+                <p>Creating interactive dashboards to visualize AI performance metrics and insights.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 2rem;">Follow Me On</h2>
+            <div style="margin-bottom: 3rem;">
+                <a href="mailto:snehaprasad17536@gmail.com" class="footer-email">Connect with Sneha</a>
+            </div>
+            <a href="https://www.linkedin.com/in/sneha-prasad-720580254/" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="https://github.com/snehacodes-14" target="_blank" class="footer-link">GitHub</a>
+            <p style="margin-top: 5rem; opacity: 0.4; font-size: 0.8rem;">© 2026 Sneha P.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
